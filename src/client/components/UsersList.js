@@ -31,4 +31,8 @@ function mapStateToProps( state ){
     return { users: state.users };
 }
 
+function loadData( reduxStore ){
+    return reduxStore.dispatch( fetchUsers() );
+}
+export { loadData };
 export default connect( mapStateToProps, { fetchUsers } )(UsersList);
